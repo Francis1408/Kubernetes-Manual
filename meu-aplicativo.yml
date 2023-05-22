@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meu-aplicativo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meu-aplicativo
+  template:
+    metadata:
+      labels:
+        app: meu-aplicativo
+    spec:
+      containers:
+        - name: meu-aplicativo-container
+          image: meu-aplicativo:latest
+          ports:
+            - containerPort: 80
