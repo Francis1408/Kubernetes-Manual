@@ -58,10 +58,9 @@ Aqui está um exemplo básico de como usar o Kubernetes para implantar e gerenci
 1. **Configuração do ambiente:**
 
 
-    * Criar um arquivo de manifesto do Kubernetes:
+    * Instalar e configurar o Kubernetes.
 
-    * Criar um arquivo YAML (por exemplo, "app-deployment.yaml") para definir os recursos necessários para implantar o aplicativo.
-    No arquivo YAML, definir um objeto Deployment para especificar os detalhes da implantação, como o nome, o número de réplicas, a imagem do contêiner, as portas expostas, etc.
+    * Verificar se o cliente do Kubernetes (kubectl) está instalado e configurado corretamente.
 
 2. **Criar um arquivo de manifesto do Kubernetes:**
 
