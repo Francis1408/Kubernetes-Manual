@@ -11,12 +11,16 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-pl
 ### *Prof. Eduardo Cunha Campos*
 -----------
 ### Alunos:
-    FILIPE PEREIRA LIMA BICALHO
-    FRANCISCO ABREU GONCALVES
-    HENRIQUE RODRIGUES LIMA
-    THALLES AUGUSTO SOARES VERCOSA
------
 
+  [FILIFPE PEREIRA BICALHO](https://github.com/F-SpaceMan)
+
+  [FRANCISCO ABREU GONCALVES](https://github.com/Francis1408)
+
+  [HENRIQUE RODRIGUES LIMA](https://github.com/Henrique-R-Lima)
+
+  [THALLES AUGUSTO SOARES VERCOSA](https://github.com/thallesasv)
+
+----
 <h3> <img height="40" width="25" align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" />
 <ins> O que é um Container </ins>
 </h3> 
@@ -67,7 +71,7 @@ Aqui está um exemplo básico de como usar o Kubernetes para implantar e gerenci
 
     * Criar um arquivo YAML (por exemplo, "app-deployment.yaml") para definir os recursos necessários para implantar o aplicativo.
 
-    * No [arquivo YAML](https://github.com/Francis1408/Kubernetes-Manual/meu-aplicativo), definir um objeto Deployment para especificar os detalhes da implantação, como o nome, o número de réplicas, a imagem do contêiner, as portas expostas, etc.
+    * No [arquivo YAML](https://github.com/Francis1408/Kubernetes-Manual/blob/main/meu-aplicativo.yml), definir um objeto Deployment para especificar os detalhes da implantação, como o nome, o número de réplicas, a imagem do contêiner, as portas expostas, etc.
 
 Exemplo de arquivo YAML
 
