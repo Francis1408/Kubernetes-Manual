@@ -12,7 +12,7 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-pl
 -----------
 ### Alunos:
 
-  [FILIFPE PEREIRA BICALHO](https://github.com/F-SpaceMan)
+  [FILIPE PEREIRA BICALHO](https://github.com/F-SpaceMan)
 
   [FRANCISCO ABREU GONCALVES](https://github.com/Francis1408)
 
