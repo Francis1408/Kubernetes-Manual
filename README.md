@@ -160,4 +160,4 @@ kubectl get pods -l app=hello-world
 kubectl get service hello-world
 ```
 
-Agora você tem um aplicativo implantado e acessível por meio do serviço exposto. Esse é apenas um exemplo básico, e o Kubernetes oferece muitos recursos avançados para gerenciar aplicativos em contêiner de forma escalável e resiliente.
+Agora temos o aplicativo implantado e acessível por meio do serviço exposto. Esse é apenas um exemplo básico, que não explora nem esgota todas as funcionalidades dos contêines e do Kubernetes.
