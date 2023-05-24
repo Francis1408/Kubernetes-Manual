@@ -57,7 +57,7 @@ Com o Kubernetes, é possível implantar, dimensionar e gerenciar aplicativos em
 <ins> Exemplo prático </ins>
 </h3>
 
-Neste exemplo básico queremos executar um programa que exibe "Hello World!" no terminal do nosso contêiner. Usamos então o Kubernetes para implantar e gerenciar o nosso app helloworld em containers Docker:
+Neste exemplo básico queremos executar um programa que exibe "Hello, world!" no terminal do nosso contêiner. Usamos então o Kubernetes para implantar e gerenciar o nosso app helloworld em containers Docker:
 
 1. **Configuração do ambiente:**
 
@@ -67,7 +67,7 @@ Neste exemplo básico queremos executar um programa que exibe "Hello World!" no 
 
    * Verificar se o cliente do Kubernetes (kubectl) está instalado e configurado corretamente.
 
-2. **Criar um arquivo hello.py**
+2. **Criar um arquivo helloworld.py**
 
 ```python
 print("Hello, world!")
@@ -76,7 +76,7 @@ print("Hello, world!")
 3. **Criar o Dockerfile**
 
 O Dockerfile é o arquivo fonte para a imagem do container. Nele especificamos como o código-fonte do nosso app deve ser compilado, dependências etc.
-Criamos o Dockerfile no mesmo diretório de hello.py.
+Criamos o Dockerfile no mesmo diretório de helloworld.py.
 
 Exemplo de Dockerfile
 
@@ -84,9 +84,9 @@ Exemplo de Dockerfile
 FROM python:3
 
 WORKDIR /app
-COPY hello.py .
+COPY helloworld.py .
 
-CMD ["python", "hello.py"]
+CMD ["python", "helloworld.py"]
 ```
 
 Então criamos a imagem do container usando o seguinte comando
