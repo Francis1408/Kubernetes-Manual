@@ -12,13 +12,13 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-pl
 -----------
 ### Alunos:
 
-  [FILIPE PEREIRA BICALHO](https://github.com/F-SpaceMan)
+  FILIPE PEREIRA BICALHO (https://github.com/F-SpaceMan) - 20203015739
 
-  [FRANCISCO ABREU GONCALVES](https://github.com/Francis1408)
+  FRANCISCO ABREU GONCALVES (https://github.com/Francis1408) - 20193002285
 
-  [HENRIQUE RODRIGUES LIMA](https://github.com/Henrique-R-Lima)
+  HENRIQUE RODRIGUES LIMA (https://github.com/Henrique-R-Lima) - 20193009473
 
-  [THALLES AUGUSTO SOARES VERCOSA](https://github.com/thallesasv)
+  THALLES AUGUSTO SOARES VERCOSA (https://github.com/thallesasv) - 20183021385
 
 ----
 <h3> <img height="40" width="25" align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" />
