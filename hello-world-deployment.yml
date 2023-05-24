@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: meu-aplicativo
+  name: hello-world
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: meu-aplicativo
+      app: hello-world
   template:
     metadata:
       labels:
-        app: meu-aplicativo
+        app: hello-world
     spec:
       containers:
-        - name: meu-aplicativo-container
-          image: meu-aplicativo:latest
+        - name: hello-world-container
+          image: hello-world-image
           ports:
             - containerPort: 80
