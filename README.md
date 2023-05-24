@@ -25,7 +25,7 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-pl
 <ins> O que é um Container </ins>
 </h3> 
 
-Um container é um ambiente virtual isolado do sistema operacional composto por um ou mais processos organizados. São utilizados para empacotar aplicações facilitando sua portabilidade para diferentes ambientes. 
+Um container ou contêiner é um ambiente virtual isolado do sistema operacional composto por um ou mais processos organizados. São utilizados para empacotar aplicações facilitando sua portabilidade para diferentes ambientes. 
 As dependências de um container são especificadas em uma imagem individual.
 
 <h3> <img height="40" width="25" align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" />
@@ -57,20 +57,49 @@ Com o Kubernetes, é possível implantar, dimensionar e gerenciar aplicativos em
 <ins> Exemplo prático </ins>
 </h3>
 
-Aqui está um exemplo básico de como usar o Kubernetes para implantar e gerenciar um aplicativo em contêiner:
+Neste exemplo básico queremos executar um programa que exibe "Hello World!" no terminal do nosso contêiner. Usamos então o Kubernetes para implantar e gerenciar o nosso app helloworld em containers Docker:
 
 1. **Configuração do ambiente:**
 
+   * Instalar e configurar o Docker.
 
-    * Instalar e configurar o Kubernetes.
+   * Instalar e configurar o Kubernetes.
 
-    * Verificar se o cliente do Kubernetes (kubectl) está instalado e configurado corretamente.
+   * Verificar se o cliente do Kubernetes (kubectl) está instalado e configurado corretamente.
 
-2. **Criar um arquivo de manifesto do Kubernetes:**
+2. **Criar um arquivo hello.py**
 
-    * Criar um arquivo YAML (por exemplo, "app-deployment.yaml") para definir os recursos necessários para implantar o aplicativo.
+```python
+print("Hello, world!")
+```
 
-    * No [arquivo YAML](https://github.com/Francis1408/Kubernetes-Manual/blob/main/meu-aplicativo.yml), definir um objeto Deployment para especificar os detalhes da implantação, como o nome, o número de réplicas, a imagem do contêiner, as portas expostas, etc.
+3. **Criar o Dockerfile**
+
+O Dockerfile é o arquivo fonte para a imagem do container. Nele especificamos como o código-fonte do nosso app deve ser compilado, dependências etc.
+Criamos o Dockerfile no mesmo diretório de hello.py.
+
+Exemplo de Dockerfile
+
+```dockerfile
+FROM python:3
+
+WORKDIR /app
+COPY hello.py .
+
+CMD ["python", "hello.py"]
+```
+
+Então criamos a imagem do container usando o seguinte comando
+
+```shell
+docker build -t hello-world-image .
+```
+
+4. **Criar um arquivo de manifesto do Kubernetes**
+
+   * No mesmo diretório, criar um arquivo YAML (por exemplo, "app-deployment.yaml") para definir os recursos necessários para implantar o aplicativo.
+
+   * No [arquivo YAML](https://github.com/Francis1408/Kubernetes-Manual/blob/main/hello-world-deployment.yml), definir um objeto Deployment para especificar os detalhes da implantação, como o nome, o número de réplicas, a imagem do contêiner, as portas expostas, etc.
 
 Exemplo de arquivo YAML
 
@@ -78,54 +107,57 @@ Exemplo de arquivo YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: meu-aplicativo
+  name: hello-world
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: meu-aplicativo
+      app: hello-world
   template:
     metadata:
       labels:
-        app: meu-aplicativo
+        app: hello-world
     spec:
       containers:
-        - name: meu-aplicativo-container
-          image: meu-aplicativo:latest
+        - name: hello-world-container
+          image: hello-world-image
           ports:
             - containerPort: 80
 ```
-3. **Implante o aplicativo:**
 
-* Use o comando kubectl para criar o objeto de implantação usando o arquivo de manifesto YAML.
+5. **Implante o aplicativo:**
+
+   * Use o comando kubectl para criar o objeto de implantação usando o arquivo de manifesto YAML.
 
 ```shell
 kubectl apply -f app-deployment.yaml
 ```
-4. **Verifique o status da implantação**
 
-* Use o comando kubectl para verificar se a implantação foi concluída com êxito e se os pods estão em execução.
+6. **Verifique o status da implantação**
+
+   * Use o comando kubectl para verificar se a implantação foi concluída com êxito e se os pods estão em execução.
 
 ```shell
-kubectl get deployment meu-aplicativo
+kubectl get deployment hello-world
 ```
 ```shell
-kubectl get pods -l app=meu-aplicativo
-```
-5. **Exponha o aplicativo:**
-
-* Para permitir o acesso ao aplicativo de fora do cluster, você pode criar um objeto de serviço.
-
-```shell
-	kubectl expose deployment meu-aplicativ  --type=LoadBalancer --port=80
+kubectl get pods -l app=hello-world
 ```
 
-6. **Verifique o serviço exposto:**
+7. **Exponha o aplicativo:**
 
-* Use o comando kubectl para verificar o serviço e obter informações sobre o ponto de extremidade.
+   * Para permitir o acesso ao aplicativo de fora do cluster, você pode criar um objeto de serviço.
 
 ```shell
-kubectl get service meu-aplicativo
+	kubectl expose deployment hello-world  --type=LoadBalancer --port=80
+```
+
+8. **Verifique o serviço exposto:**
+
+   * Use o comando kubectl para verificar o serviço e obter informações sobre o ponto de extremidade.
+
+```shell
+kubectl get service hello-world
 ```
 
 Agora você tem um aplicativo implantado e acessível por meio do serviço exposto. Esse é apenas um exemplo básico, e o Kubernetes oferece muitos recursos avançados para gerenciar aplicativos em contêiner de forma escalável e resiliente.
